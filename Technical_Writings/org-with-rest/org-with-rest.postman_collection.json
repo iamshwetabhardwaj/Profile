@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "8cbaac8f-fef0-4053-9532-9d3afc1bf67d",
+		"name": "org-with-rest",
+		"description": "REST Endpoints for APIs developed as part of org-with-rest demo project.\nFollowing technology stack is used -\n\n- Java (JDK v8)\n- Spring Boot (v2.1.7.RELEASE)\n- Spring MVC (v5.1.9.RELEASE)\n- Hibernate (v5.3.10.Final)\n- PostgreSQL (v42.2.6)\n- Lombok (v1.18.8)\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employee - findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/findById/?empId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"findById",
+						""
+					],
+					"query": [
+						{
+							"key": "empId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Demo API which takes an employee ID as input and fetches an Employee record from database."
+			},
+			"response": []
+		},
+		{
+			"name": "Employee - findDepartmentByEmployeeId - Error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/findDepartmentByEmployeeId/?empId=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"findDepartmentByEmployeeId",
+						""
+					],
+					"query": [
+						{
+							"key": "empId",
+							"value": "10"
+						}
+					]
+				},
+				"description": "An API which takes employee ID as an input and returns the employee's departments."
+			},
+			"response": []
+		},
+		{
+			"name": "Employee - findDepartmentByEmployeeId - Success",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/findDepartmentByEmployeeId/?empId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"findDepartmentByEmployeeId",
+						""
+					],
+					"query": [
+						{
+							"key": "empId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "A success response API for finding department(s) of employees, given an employee ID."
+			},
+			"response": []
+		},
+		{
+			"name": "Department - findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/department/findById/?deptId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"findById",
+						""
+					],
+					"query": [
+						{
+							"key": "deptId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Given a Department ID, find the department"
+			},
+			"response": []
+		},
+		{
+			"name": "Department - findByName - Success",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/department/findByName?deptName=IT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"findByName"
+					],
+					"query": [
+						{
+							"key": "deptName",
+							"value": "IT"
+						}
+					]
+				},
+				"description": "Given a department name, find the Department details."
+			},
+			"response": []
+		},
+		{
+			"name": "Department - findEmployeeByDepartmentId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/department/findEmployeeByDepartmentId?deptId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"findEmployeeByDepartmentId"
+					],
+					"query": [
+						{
+							"key": "deptId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Given a department name, find the Department details."
+			},
+			"response": []
+		},
+		{
+			"name": "Department - findByName - Error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				},
+				"description": "Error Response when an invalid search criteria is given to find departments by name."
+			},
+			"response": []
+		},
+		{
+			"name": "Department - add new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"status\": \"ACTIVE\",\n\t\"name\": \"TEST_DEPARTMENT\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/department/addDepartment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"addDepartment"
+					]
+				},
+				"description": "Insert new Department to database."
+			},
+			"response": []
+		},
+		{
+			"name": "Employee - deleteEmployee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/deleteEmployee?empId=5&empStatus=INACTIVE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"deleteEmployee"
+					],
+					"query": [
+						{
+							"key": "empId",
+							"value": "5"
+						},
+						{
+							"key": "empStatus",
+							"value": "INACTIVE"
+						}
+					]
+				},
+				"description": "Given an employee ID, delete the employee record from the database."
+			},
+			"response": []
+		}
+	]
+}
