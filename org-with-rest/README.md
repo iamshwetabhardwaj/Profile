@@ -22,6 +22,29 @@ Following software(s) are expected to be pre-installed on your system to run thi
 - Hibernate (v5.3.10.Final)
 - PostgreSQL (v42.2.6)
 
+#### Features being demonstrated
+1. RESTful Endpoints with Spring MVC based mappings for 
+  - GET
+  - POST
+  - DELETE
+2. AOP Implementation for Logging with Pointcuts for
+  - Before 
+  - Around
+  - AfterThrowing
+3. Spring Data JPA Implementations for
+  - native queries
+  - regular JPA methods 
+  - Transaction Management and Propagation
+4. Hibernate Entity Relationships
+  - Composite Primary Key
+  - Attribute Overrides
+  - Many to Many relationship mappings
+5. PostgreSQL queries 
+  - Schema creation
+  - Table creation, only if table does not exist
+  - Composite Primary and Foreign keys
+  - Insert data in table only if prior record does not exist
+
 
 #### Installation Instructions
 1. Open a command line tool and navigate to the directory/folder where the JAR is placed.
@@ -33,45 +56,45 @@ Following software(s) are expected to be pre-installed on your system to run thi
 2. Run the following command - mvn spring-boot:run
 
 #### A list of files included
-├───src
-│   ├───main
-│   │   ├───java
-│   │   │   └───io
-│   │   │       └───demo
-│   │   │           └───orgwithrest
-│   │   │               │   OrgWithRestApplication.java
-│   │   │               │
-│   │   │               ├───controller
-│   │   │               │       DepartmentController.java
-│   │   │               │       EmployeeController.java
-│   │   │               │
-│   │   │               ├───dao
-│   │   │               │       DepartmentRepository.java
-│   │   │               │       EmployeeRepository.java
-│   │   │               │
-│   │   │               ├───logger
-│   │   │               │       OrgWithRestLogger.java
-│   │   │               │
-│   │   │               ├───model
-│   │   │               │       Department.java
-│   │   │               │       Employee.java
-│   │   │               │       Primary.java
-│   │   │               │
-│   │   │               └───service
-│   │   │                   │   DepartmentService.java
-│   │   │                   │   EmployeeService.java
-│   │   │                   │
-│   │   │                   └───impl
-│   │   │                           DepartmentServiceImpl.java
-│   │   │                           EmployeeServiceImpl.java
-│   │   │
-│   │   └───resources
-│   │       │   application.properties
-│   │       │   data.sql
-│   │       │   schema.sql
-│   │       │
-│   │       ├───static
-│   │       └───templates
+- ├───src
+- │   ├───main
+- │   │   ├───java
+- │   │   │   └───io
+- │   │   │       └───demo
+- │   │   │           └───orgwithrest
+- │   │   │               │   OrgWithRestApplication.java
+- │   │   │               │
+- │   │   │               ├───controller
+- │   │   │               │       DepartmentController.java
+- │   │   │               │       EmployeeController.java
+- │   │   │               │
+- │   │   │               ├───dao
+- │   │   │               │       DepartmentRepository.java
+- │   │   │               │       EmployeeRepository.java
+- │   │   │               │
+- │   │   │               ├───logger
+- │   │   │               │       OrgWithRestLogger.java
+- │   │   │               │
+- │   │   │               ├───model
+- │   │   │               │       Department.java
+- │   │   │               │       Employee.java
+- │   │   │               │       Primary.java
+- │   │   │               │
+- │   │   │               └───service
+- │   │   │                   │   DepartmentService.java
+- │   │   │                   │   EmployeeService.java
+- │   │   │                   │
+- │   │   │                   └───impl
+- │   │   │                           DepartmentServiceImpl.java
+- │   │   │                           EmployeeServiceImpl.java
+- │   │   │
+- │   │   └───resources
+- │   │       │   application.properties
+- │   │       │   data.sql
+- │   │       │   schema.sql
+- │   │       │
+- │   │       ├───static
+- │   │       └───templates
 
 #### Additional Notes
 A postman test suite is also included which lists all the APIs exposed in this project and also shows sample requests which demonstrate error handling and successful request formats.
