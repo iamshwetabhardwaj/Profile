@@ -21,6 +21,7 @@ Following software(s) are expected to be pre-installed on your system to run thi
 - Spring MVC (v5.1.9.RELEASE)
 - Hibernate (v5.3.10.Final)
 - PostgreSQL (v42.2.6)
+- Swagger (v2.9.2)
 
 #### Features being demonstrated
 1. RESTful Endpoints with Spring MVC based mappings for 
@@ -44,16 +45,14 @@ Following software(s) are expected to be pre-installed on your system to run thi
   - Table creation, only if table does not exist
   - Composite Primary and Foreign keys
   - Insert data in table only if prior record does not exist
+6. Swagger
+  - API documentation available after running the JAR.
 
-
-#### Installation Instructions
+#### Operational Instructions
 1. Open a command line tool and navigate to the directory/folder where the JAR is placed.
-2. Run the following command - mvn clean install
+    a. Run the following command - mvn clean install
+    b. Alternatively, can also run the command - java –jar org-with-rest-0.0.1-SNAPSHOT.jar
 
-
-#### Operating Instructions
-1. Open a command line tool and navigate to the directory/folder where the JAR is placed.
-2. Run the following command - mvn spring-boot:run
 
 #### A list of files included
 - ├───src
@@ -98,6 +97,7 @@ Following software(s) are expected to be pre-installed on your system to run thi
 
 #### Additional Notes
 A postman test suite is also included which lists all the APIs exposed in this project and also shows sample requests which demonstrate error handling and successful request formats.
+A snapshot of the Swagger UI is also available which lists the endpoint documentation.
 
 ##### Developer Contact Information
 - budbakforgit@gmail.com
