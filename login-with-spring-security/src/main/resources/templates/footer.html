@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/signin.css}" />
+
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+
+<footer class="footer mt-auto py-3 fixed-bottom">
+  <div class="container" >
+		<div class="text-center py-3"> <!-- footer-copyright  style="padding-top: 435px;"-->
+			<p>
+				Contact Us &nbsp;&nbsp;&nbsp;&nbsp; 
+				<a href="https://www.twitter.com" data-toggle="tooltip" data-placement="bottom" title="" ><i class="fa fa-twitter"></i></a>
+				&nbsp; &nbsp; 
+				<a href="mailto:test@mail.com" data-toggle="tooltip" data-placement="bottom" ><i class="fa fa-envelope"></i></a>
+				&nbsp; &nbsp; 
+				<a href="1234567890" data-toggle="tooltip" data-placement="bottom" ><i class="fa fa-phone"></i></a>
+			</p>
+			<p>&copy; 
+				<script type="text/javascript">
+				  document.write(new Date().getFullYear());
+				</script>
+			</p>
+		</div>
+  </div>
+</footer>

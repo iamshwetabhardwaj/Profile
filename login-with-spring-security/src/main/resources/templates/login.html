@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login with Spring Security</title>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+$(document).ready(function() {
+	  $('[data-toggle="tooltip"]').tooltip({
+	    selector: true,
+	    title: function() {
+	      return $(this).attr('href');
+	    }
+	  });
+
+	if (document.getElementById("errorMessage").textContent=="") {
+		document.getElementById("error-div").style.display="none";
+	} else {
+		document.getElementById("error-div").style.display="block";
+	}
+
+	if(document.getElementById("message").textContent=="") {
+		document.getElementById("message-div").style.display="none";
+	}
+
+});
+</script>
+
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/signin.css}" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+
+        @media ( min-width : 768px) {
+        .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+        }
+        }
+    </style>
+
+    <script type="text/javascript">
+function clearError() {
+	document.getElementById("errorMessage").textContent="";
+	document.getElementById("error-div").style.display="none";
+}
+</script>
+
+</head>
+<body class="text-center">
+<form class="form-signin" action="#" th:action="@{/login}"  th:object="${user}" method="post">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+    <div id="error-div" class="alert alert-danger">
+        <span id="errorMessage" th:text="${errorMessage}"></span>
+    </div>
+
+    <div id="message-div" class="alert alert-success">
+        <span id="message" th:text="${message}"></span>
+    </div>
+
+    <label for="username" class="sr-only">Username</label>
+    <input th:field="*{username}"
+           type="text" id="username" class="form-control" placeholder="Username" required autofocus onkeyup="clearError();">
+    <label for="password" class="sr-only" >Password</label>
+    <input th:field="*{password}"
+           type="password" id="password" class="form-control"
+           placeholder="Password" required onkeyup="clearError();">
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+        in</button>
+    <p class="text-muted" align="right">
+        <a href="/forgot-password">Forgot Password</a>
+    </p>
+
+    <br /> <br /> <br /> <br />
+
+    <footer th:insert="footer.html"> </footer>
+
+    <input type="hidden" name="${_csrf.parameterName}"
+           value="${_csrf.token}" />
+</form>
+</body>
+</html>

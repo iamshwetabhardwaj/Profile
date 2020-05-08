@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/signin.css}" />
+
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+
+
+<body class="text-center">
+<div class="form-signin">
+    <img class="mb-3" th:src="@{/images/leaf.jpg}" alt="">
+    <h1 class="h2 mb-2 font-weight-normal">Oops! Something went wrong!</h1>
+    <br/>
+    <a href="/home">Go Home</a>
+
+    <input type="hidden" name="${_csrf.parameterName}"
+           value="${_csrf.token}" />
+
+</div>
+</body>
+</html>

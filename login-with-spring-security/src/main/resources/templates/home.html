@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/signin.css}" />
+
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+</head>
+
+<body class="text-center">
+<form class="form-signin" th:object="${user}" >
+    <div>
+
+        <img class="mb-3" th:src="@{/images/leaf.jpg}" alt="">
+
+        <h1 class="h2 mb-2 font-weight-normal"><span id="message" th:text="${message}"></span></h1>
+
+
+
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
+        <div id="navb" class="navbar-collapse collapse hide">
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" th:href="@{/logout}">
+                    <span class="fa fa-sign-out"></span> Logout
+                </a>
+            </li>
+        </ul>
+
+        <input type="hidden" name="${_csrf.parameterName}"
+               value="${_csrf.token}" />
+        </div>
+    </div>
+
+</form>
+
+</body>
+</html>
