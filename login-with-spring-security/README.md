@@ -6,7 +6,7 @@ This is a small application built to demonstrate Authentication and Authorizatio
 
 <h2> UI Look and Feel </h2>
 
-<a href="https://youtu.be/j4oG5YeZ3MU"><img src="thumbnail.png" title="Login-with-Spring-Security"></a>
+<a href="https://www.youtube.com/watch?v=vWMwvbAlMEs"><img src="thumbnail.png" title="Login-with-Spring-Security"></a>
 
 <h2>Technology Stack</h2>
 
